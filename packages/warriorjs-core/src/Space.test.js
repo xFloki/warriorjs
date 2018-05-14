@@ -223,11 +223,15 @@ describe('Space', () => {
 
     describe('captive', () => {
       beforeEach(() => {
-        unit.captive = true;
+        unit.hostile = false;
       });
 
       test('is not enemy', () => {
         expect(space.isEnemy()).toBe(false);
+      });
+
+      test('is not hostile', () => {
+        expect(space.isHostile()).toBe(false);
       });
 
       test('is captive', () => {
