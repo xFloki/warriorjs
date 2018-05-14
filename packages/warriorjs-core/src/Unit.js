@@ -12,21 +12,22 @@ class Unit {
    * @param {number} reward The number of points to reward when killed.
    * @param {boolean} captive Whether the unit is a captive or not.
    */
-  constructor(name, character, maxHealth, reward = null, captive = false) {
+  constructor(name, character, maxHealth, reward = null, hostile = true) {
     this.name = name;
     this.character = character;
     this.maxHealth = maxHealth;
     this.reward = reward === null ? maxHealth : reward;
-    this.captive = captive;
+    this.hostile = true;
     this.abilities = new Map();
     this.effects = new Map();
     this.health = maxHealth;
     this.position = null;
-    this.bound = captive;
+    //this.bound = captive;
     this.score = 0;
     this.turn = null;
   }
 
+  //Is it changed?
   /**
    * Adds an ability to the unit.
    *
